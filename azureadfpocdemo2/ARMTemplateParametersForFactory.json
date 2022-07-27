@@ -4,21 +4,6 @@
 	"parameters": {
 		"factoryName": {
 			"value": "azureadfpocdemo2"
-		},
-		"lS_Scr_crm_servicePrincipalCredential": {
-			"value": ""
-		},
-		"LS_AzureSqlDatabase1_connectionString": {
-			"value": ""
-		},
-		"Dataverse_to_SQL_accountKey": {
-			"value": ""
-		},
-		"lS_Scr_crm_properties_typeProperties_servicePrincipalId": {
-			"value": "3e41e52c-8af6-4844-be81-31a2dcd0c887"
-		},
-		"Dataverse_to_SQL_properties_typeProperties_url": {
-			"value": "https://adfpoc1234567.dfs.core.windows.net/"
 		}
 	}
 }

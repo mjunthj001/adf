@@ -6,132 +6,12 @@
 			"type": "string",
 			"metadata": "Data Factory name",
 			"defaultValue": "azureadfpocdemo2"
-		},
-		"lS_Scr_crm_servicePrincipalCredential": {
-			"type": "secureString",
-			"metadata": "Secure string for 'servicePrincipalCredential' of 'lS_Scr_crm'"
-		},
-		"LS_AzureSqlDatabase1_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'LS_AzureSqlDatabase1'"
-		},
-		"Dataverse_to_SQL_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'Dataverse_to_SQL'"
-		},
-		"lS_Scr_crm_properties_typeProperties_servicePrincipalId": {
-			"type": "string",
-			"defaultValue": "3e41e52c-8af6-4844-be81-31a2dcd0c887"
-		},
-		"Dataverse_to_SQL_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://adfpoc1234567.dfs.core.windows.net/"
 		}
 	},
 	"variables": {
 		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
 	},
 	"resources": [
-		{
-			"name": "[concat(parameters('factoryName'), '/pipeline1')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "Data flow1",
-						"type": "ExecuteDataFlow",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "1.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"dataflow": {
-								"referenceName": "CRM_DB",
-								"type": "DataFlowReference",
-								"parameters": {},
-								"datasetParameters": {
-									"source1": {},
-									"DBsrc": {},
-									"sink1": {},
-									"adress": {}
-								}
-							},
-							"staging": {},
-							"compute": {
-								"coreCount": 8,
-								"computeType": "General"
-							},
-							"traceLevel": "Fine"
-						}
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {},
-					"cancelAfter": {}
-				},
-				"annotations": [],
-				"lastPublishTime": "2022-07-16T04:51:58Z"
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/dataflows/CRM_DB')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/pipeline1_copy1')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "Data flow1",
-						"type": "ExecuteDataFlow",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "1.00:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"dataflow": {
-								"referenceName": "CRM_DB",
-								"type": "DataFlowReference",
-								"parameters": {},
-								"datasetParameters": {
-									"source1": {},
-									"DBsrc": {},
-									"sink1": {},
-									"adress": {}
-								}
-							},
-							"staging": {},
-							"compute": {
-								"coreCount": 8,
-								"computeType": "General"
-							},
-							"traceLevel": "Fine"
-						}
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {},
-					"cancelAfter": {}
-				},
-				"annotations": [],
-				"lastPublishTime": "2022-07-20T09:13:42Z"
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/dataflows/CRM_DB')]"
-			]
-		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Pl1')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
@@ -152,670 +32,73 @@
 					"elapsedTimeMetric": {},
 					"cancelAfter": {}
 				},
-				"annotations": [],
-				"lastPublishTime": "2022-07-27T11:49:37Z"
+				"annotations": []
 			},
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/LS_AzureSqlTable')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
+			"name": "[concat(parameters('factoryName'), '/Test1')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"linkedServiceName": {
-					"referenceName": "LS_AzureSqlDatabase1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
+				"activities": [
 					{
-						"name": "firstname",
-						"type": "varchar"
-					},
-					{
-						"name": "lastname",
-						"type": "varchar"
-					},
-					{
-						"name": "jobtitle",
-						"type": "varchar"
-					},
-					{
-						"name": "emailaddress1",
-						"type": "varchar"
-					},
-					{
-						"name": "createdon",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "modifiedon",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "HashValue",
-						"type": "varchar"
+						"name": "Wait1",
+						"type": "Wait",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"waitTimeInSeconds": 20
+						}
 					}
 				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "adfpoc2_src_crm"
-				}
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
+				},
+				"annotations": []
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/LS_AzureSqlDatabase1')]"
-			]
+			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/src_crm')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
+			"name": "[concat(parameters('factoryName'), '/pl2')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"linkedServiceName": {
-					"referenceName": "lS_Scr_crm",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "DynamicsEntity",
-				"schema": [],
-				"typeProperties": {
-					"entityName": "contact"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/lS_Scr_crm')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/LS_Adress')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "LS_AzureSqlDatabase1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
+				"activities": [
 					{
-						"name": "firstname",
-						"type": "varchar"
+						"name": "Time1",
+						"type": "Wait",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"waitTimeInSeconds": 5
+						}
 					},
 					{
-						"name": "jobtitle",
-						"type": "varchar"
-					},
-					{
-						"name": "emailaddress1",
-						"type": "varchar"
-					},
-					{
-						"name": "modifiedon",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "HashValue",
-						"type": "varchar"
+						"name": "Time2",
+						"type": "Wait",
+						"dependsOn": [
+							{
+								"activity": "Time1",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"userProperties": [],
+						"typeProperties": {
+							"waitTimeInSeconds": 100
+						}
 					}
 				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "adfpoc2_src_crm_address"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/LS_AzureSqlDatabase1')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/LS_Namedeatils')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "LS_AzureSqlDatabase1",
-					"type": "LinkedServiceReference"
+				"policy": {
+					"elapsedTimeMetric": {},
+					"cancelAfter": {}
 				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "firstname",
-						"type": "varchar"
-					},
-					{
-						"name": "lastname",
-						"type": "varchar"
-					},
-					{
-						"name": "jobtitle",
-						"type": "varchar"
-					},
-					{
-						"name": "emailaddress1",
-						"type": "varchar"
-					},
-					{
-						"name": "createdon",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "modifiedon",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					},
-					{
-						"name": "HashValue",
-						"type": "varchar"
-					}
-				],
-				"typeProperties": {
-					"schema": "dbo",
-					"table": "adfpoc2_src_crm"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/LS_AzureSqlDatabase1')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/lS_Scr_crm')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "Dynamics",
-				"typeProperties": {
-					"deploymentType": "Online",
-					"serviceUri": "https://org0caaef14.crm8.dynamics.com/",
-					"authenticationType": "AADServicePrincipal",
-					"servicePrincipalCredentialType": "ServicePrincipalKey",
-					"servicePrincipalId": "[parameters('lS_Scr_crm_properties_typeProperties_servicePrincipalId')]",
-					"servicePrincipalCredential": {
-						"type": "SecureString",
-						"value": "[parameters('lS_Scr_crm_servicePrincipalCredential')]"
-					}
-				}
+				"annotations": []
 			},
 			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/LS_AzureSqlDatabase1')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureSqlDatabase",
-				"typeProperties": {
-					"connectionString": "[parameters('LS_AzureSqlDatabase1_connectionString')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Dataverse_to_SQL')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobFS",
-				"typeProperties": {
-					"url": "[parameters('Dataverse_to_SQL_properties_typeProperties_url')]",
-					"accountKey": {
-						"type": "SecureString",
-						"value": "[parameters('Dataverse_to_SQL_accountKey')]"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/CRM_DB')]",
-			"type": "Microsoft.DataFactory/factories/dataflows",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"type": "MappingDataFlow",
-				"typeProperties": {
-					"sources": [
-						{
-							"dataset": {
-								"referenceName": "src_crm",
-								"type": "DatasetReference"
-							},
-							"name": "source1"
-						},
-						{
-							"dataset": {
-								"referenceName": "LS_Namedeatils",
-								"type": "DatasetReference"
-							},
-							"name": "DBsrc"
-						}
-					],
-					"sinks": [
-						{
-							"dataset": {
-								"referenceName": "LS_Namedeatils",
-								"type": "DatasetReference"
-							},
-							"name": "sink1"
-						},
-						{
-							"dataset": {
-								"referenceName": "LS_Adress",
-								"type": "DatasetReference"
-							},
-							"name": "adress"
-						}
-					],
-					"transformations": [
-						{
-							"name": "HashValue"
-						},
-						{
-							"name": "join"
-						},
-						{
-							"name": "CRMSelct"
-						},
-						{
-							"name": "filter1"
-						},
-						{
-							"name": "AlterRow1"
-						}
-					],
-					"scriptLines": [
-						"source(output(",
-						"          preferredcontactmethodcodename as string,",
-						"          haschildrencodename as string,",
-						"          emailaddress2 as string,",
-						"          emailaddress1 as string,",
-						"          address3_addresstypecode as integer,",
-						"          address1_city as string,",
-						"          msdyn_gdproptoutname as string,",
-						"          address3_line1 as string,",
-						"          address1_line1 as string,",
-						"          educationcodename as string,",
-						"          address1_longitude as double,",
-						"          managerphone as string,",
-						"          modifiedon as timestamp,",
-						"          aging90 as decimal(38,2),",
-						"          overriddencreatedon as timestamp,",
-						"          yomilastname as string,",
-						"          yomifirstname as string,",
-						"          statuscodename as string,",
-						"          donotpostalmail as boolean,",
-						"          yomifullname as string,",
-						"          createdbyexternalpartyname as string,",
-						"          address1_addresstypecode as integer,",
-						"          address3_line2 as string,",
-						"          modifiedbyyominame as string,",
-						"          businesscard as string,",
-						"          aging30 as decimal(38,2),",
-						"          address1_freighttermscode as integer,",
-						"          address3_telephone1 as string,",
-						"          statecodename as string,",
-						"          address3_line3 as string,",
-						"          address2_county as string,",
-						"          creditonhold as boolean,",
-						"          address2_city as string,",
-						"          donotbulkpostalmail as boolean,",
-						"          aging60_base as decimal(38,4),",
-						"          preferredsystemuseridyominame as string,",
-						"          address1_shippingmethodcode as integer,",
-						"          paymenttermscode as integer,",
-						"          gendercode as integer,",
-						"          address3_utcoffset as integer,",
-						"          address3_primarycontactname as string,",
-						"          modifiedbyexternalpartyyominame as string,",
-						"          createdbyyominame as string,",
-						"          entityimage_url as string,",
-						"          preferredsystemuseridname as string,",
-						"          preferredappointmenttimecode as integer,",
-						"          preferredappointmentdaycodename as string,",
-						"          address2_stateorprovince as string,",
-						"          participatesinworkflowname as string,",
-						"          msdyn_orgchangestatusname as string,",
-						"          mobilephone as string,",
-						"          parentcustomeridyominame as string,",
-						"          address2_country as string,",
-						"          teamsfollowed as integer,",
-						"          address2_line2 as string,",
-						"          address3_stateorprovince as string,",
-						"          assistantphone as string,",
-						"          address3_shippingmethodcodename as string,",
-						"          address1_line3 as string,",
-						"          onholdtime as integer,",
-						"          parentcontactidyominame as string,",
-						"          address3_longitude as double,",
-						"          address3_fax as string,",
-						"          creditlimit as decimal(38,2),",
-						"          owningbusinessunitname as string,",
-						"          birthdate as timestamp,",
-						"          businesscardattributes as string,",
-						"          originatingleadidname as string,",
-						"          address1_utcoffset as integer,",
-						"          versionnumber as long,",
-						"          donotsendmarketingmaterialname as string,",
-						"          modifiedbyexternalpartyname as string,",
-						"          address1_telephone1 as string,",
-						"          customertypecode as integer,",
-						"          donotbulkpostalmailname as string,",
-						"          exchangerate as decimal(38,12),",
-						"          address3_composite as string,",
-						"          telephone3 as string,",
-						"          customersizecode as integer,",
-						"          preferredcontactmethodcode as integer,",
-						"          statuscode as integer,",
-						"          description as string,",
-						"          childrensnames as string,",
-						"          address1_addresstypecodename as string,",
-						"          address2_latitude as double,",
-						"          createdon as timestamp,",
-						"          donotbulkemail as boolean,",
-						"          slaname as string,",
-						"          marketingonlyname as string,",
-						"          donotfax as boolean,",
-						"          familystatuscodename as string,",
-						"          annualincome_base as decimal(38,4),",
-						"          address2_freighttermscodename as string,",
-						"          aging90_base as decimal(38,4),",
-						"          address1_composite as string,",
-						"          firstname as string,",
-						"          address2_freighttermscode as integer,",
-						"          preferredappointmenttimecodename as string,",
-						"          callback as string,",
-						"          educationcode as integer,",
-						"          msdyn_segmentidname as string,",
-						"          lastusedincampaign as timestamp,",
-						"          paymenttermscodename as string,",
-						"          employeeid as string,",
-						"          processid as string,",
-						"          owneridyominame as string,",
-						"          governmentid as string,",
-						"          isautocreate as boolean,",
-						"          isbackofficecustomername as string,",
-						"          address2_shippingmethodcodename as string,",
-						"          address2_line3 as string,",
-						"          parentcustomeridname as string,",
-						"          entityimage as string,",
-						"          timezoneruleversionnumber as integer,",
-						"          spousesname as string,",
-						"          address1_county as string,",
-						"          msdyn_gdproptout as boolean,",
-						"          shippingmethodcodename as string,",
-						"          address3_freighttermscode as integer,",
-						"          donotemail as boolean,",
-						"          address3_county as string,",
-						"          address3_freighttermscodename as string,",
-						"          donotphonename as string,",
-						"          pager as string,",
-						"          address2_postofficebox as string,",
-						"          address2_telephone1 as string,",
-						"          address2_telephone2 as string,",
-						"          address2_telephone3 as string,",
-						"          originatingleadidyominame as string,",
-						"          telephone1 as string,",
-						"          address1_addressid as string,",
-						"          traversedpath as string,",
-						"          followemailname as string,",
-						"          annualincome as decimal(38,2),",
-						"          websiteurl as string,",
-						"          address2_name as string,",
-						"          address1_country as string,",
-						"          middlename as string,",
-						"          address3_telephone2 as string,",
-						"          entityimageid as string,",
-						"          aging60 as decimal(38,2),",
-						"          timespentbymeonemailandmeetings as string,",
-						"          address3_upszone as string,",
-						"          entityimage_timestamp as long,",
-						"          owneridname as string,",
-						"          creditonholdname as string,",
-						"          accountrolecode as integer,",
-						"          createdonbehalfbyyominame as string,",
-						"          address2_composite as string,",
-						"          territorycodename as string,",
-						"          participatesinworkflow as boolean,",
-						"          customertypecodename as string,",
-						"          transactioncurrencyidname as string,",
-						"          address1_stateorprovince as string,",
-						"          externaluseridentifier as string,",
-						"          isprivatename as string,",
-						"          preferredserviceidname as string,",
-						"          marketingonly as boolean,",
-						"          modifiedonbehalfbyname as string,",
-						"          createdonbehalfbyname as string,",
-						"          createdbyexternalpartyyominame as string,",
-						"          address1_freighttermscodename as string,",
-						"          mastercontactidname as string,",
-						"          jobtitle as string,",
-						"          nickname as string,",
-						"          managername as string,",
-						"          isprivate as boolean,",
-						"          address1_telephone2 as string,",
-						"          address1_telephone3 as string,",
-						"          address3_latitude as double,",
-						"          isbackofficecustomer as boolean,",
-						"          contactid as string,",
-						"          suffix as string,",
-						"          donotemailname as string,",
-						"          slainvokedidname as string,",
-						"          address2_postalcode as string,",
-						"          fax as string,",
-						"          mastercontactidyominame as string,",
-						"          assistantname as string,",
-						"          yomimiddlename as string,",
-						"          address3_country as string,",
-						"          address2_utcoffset as integer,",
-						"          address2_shippingmethodcode as integer,",
-						"          address2_fax as string,",
-						"          merged as boolean,",
-						"          owneridtype as string,",
-						"          address2_longitude as double,",
-						"          donotpostalmailname as string,",
-						"          createdbyname as string,",
-						"          donotphone as boolean,",
-						"          address1_shippingmethodcodename as string,",
-						"          accountidname as string,",
-						"          address1_primarycontactname as string,",
-						"          statecode as integer,",
-						"          lastonholdtime as timestamp,",
-						"          address1_line2 as string,",
-						"          donotsendmm as boolean,",
-						"          address2_addresstypecode as integer,",
-						"          address2_upszone as string,",
-						"          followemail as boolean,",
-						"          accountrolecodename as string,",
-						"          territorycode as integer,",
-						"          address3_name as string,",
-						"          donotfaxname as string,",
-						"          gendercodename as string,",
-						"          address2_addresstypecodename as string,",
-						"          salutation as string,",
-						"          leadsourcecodename as string,",
-						"          address1_postalcode as string,",
-						"          company as string,",
-						"          stageid as string,",
-						"          utcconversiontimezonecode as integer,",
-						"          address3_postalcode as string,",
-						"          donotbulkemailname as string,",
-						"          defaultpricelevelidname as string,",
-						"          preferredappointmentdaycode as integer,",
-						"          customersizecodename as string,",
-						"          msdyn_contactkpiidname as string,",
-						"          preferredequipmentidname as string,",
-						"          home2 as string,",
-						"          anniversary as timestamp,",
-						"          importsequencenumber as integer,",
-						"          haschildrencode as integer,",
-						"          telephone2 as string,",
-						"          mergedname as string,",
-						"          subscriptionid as string,",
-						"          familystatuscode as integer,",
-						"          department as string,",
-						"          address3_city as string,",
-						"          business2 as string,",
-						"          aging30_base as decimal(38,4),",
-						"          address1_name as string,",
-						"          address1_fax as string,",
-						"          address1_latitude as double,",
-						"          address3_shippingmethodcode as integer,",
-						"          address3_telephone3 as string,",
-						"          emailaddress3 as string,",
-						"          address3_postofficebox as string,",
-						"          creditlimit_base as decimal(38,4),",
-						"          parentcustomeridtype as string,",
-						"          parentcontactidname as string,",
-						"          modifiedbyname as string,",
-						"          leadsourcecode as integer,",
-						"          address2_line1 as string,",
-						"          address1_upszone as string,",
-						"          lastname as string,",
-						"          address3_addresstypecodename as string,",
-						"          accountidyominame as string,",
-						"          shippingmethodcode as integer,",
-						"          address2_addressid as string,",
-						"          modifiedonbehalfbyyominame as string,",
-						"          ftpsiteurl as string,",
-						"          msdyn_orgchangestatus as integer,",
-						"          numberofchildren as integer,",
-						"          address1_postofficebox as string,",
-						"          address2_primarycontactname as string,",
-						"          fullname as string,",
-						"          address3_addressid as string,",
-						"          msdyn_segmentid as string,",
-						"          modifiedbyexternalparty as string,",
-						"          createdonbehalfby as string,",
-						"          createdbyexternalparty as string,",
-						"          masterid as string,",
-						"          owninguser as string,",
-						"          preferredsystemuserid as string,",
-						"          accountid as string,",
-						"          slainvokedid as string,",
-						"          modifiedby as string,",
-						"          preferredequipmentid as string,",
-						"          msdyn_contactkpiid as string,",
-						"          slaid as string,",
-						"          preferredserviceid as string,",
-						"          transactioncurrencyid as string,",
-						"          modifiedonbehalfby as string,",
-						"          parentcontactid as string,",
-						"          ownerid as string,",
-						"          {@odata.etag} as string,",
-						"          createdby as string,",
-						"          parentcustomerid as string,",
-						"          owningbusinessunit as string,",
-						"          defaultpricelevelid as string,",
-						"          owningteam as string,",
-						"          originatingleadid as string",
-						"     ),",
-						"     allowSchemaDrift: true,",
-						"     validateSchema: false,",
-						"     timeout: 120) ~> source1",
-						"source(output(",
-						"          firstname as string,",
-						"          lastname as string,",
-						"          jobtitle as string,",
-						"          emailaddress1 as string,",
-						"          createdon as timestamp,",
-						"          modifiedon as timestamp,",
-						"          HashValue as string",
-						"     ),",
-						"     allowSchemaDrift: true,",
-						"     validateSchema: false,",
-						"     isolationLevel: 'READ_UNCOMMITTED',",
-						"     format: 'table') ~> DBsrc",
-						"source1 derive(HashValue = sha1(firstname,lastname,modifiedon)) ~> HashValue",
-						"CRMSelct, DBsrc join(CRMSelct@HashValue == DBsrc@HashValue,",
-						"     joinType:'left',",
-						"     matchType:'exact',",
-						"     ignoreSpaces: false,",
-						"     broadcast: 'auto')~> join",
-						"HashValue select(mapColumn(",
-						"          firstname,",
-						"          lastname,",
-						"          birthdate,",
-						"          modifiedon,",
-						"          HashValue,",
-						"          emailaddress1,",
-						"          jobtitle",
-						"     ),",
-						"     skipDuplicateMapInputs: true,",
-						"     skipDuplicateMapOutputs: true) ~> CRMSelct",
-						"join filter(isNull(DBsrc@HashValue)) ~> filter1",
-						"filter1 alterRow(upsertIf(isNull(DBsrc@HashValue)==true())) ~> AlterRow1",
-						"AlterRow1 sink(allowSchemaDrift: true,",
-						"     validateSchema: false,",
-						"     input(",
-						"          firstname as string,",
-						"          lastname as string,",
-						"          jobtitle as string,",
-						"          emailaddress1 as string,",
-						"          createdon as timestamp,",
-						"          modifiedon as timestamp,",
-						"          HashValue as string",
-						"     ),",
-						"     deletable:false,",
-						"     insertable:false,",
-						"     updateable:false,",
-						"     upsertable:true,",
-						"     keys:['HashValue'],",
-						"     format: 'table',",
-						"     skipDuplicateMapInputs: true,",
-						"     skipDuplicateMapOutputs: true,",
-						"     errorHandlingOption: 'stopOnFirstError',",
-						"     mapColumn(",
-						"          firstname = CRMSelct@firstname,",
-						"          lastname = CRMSelct@lastname,",
-						"          HashValue = CRMSelct@HashValue,",
-						"          createdon,",
-						"          modifiedon = CRMSelct@modifiedon",
-						"     )) ~> sink1",
-						"filter1 sink(allowSchemaDrift: true,",
-						"     validateSchema: false,",
-						"     input(",
-						"          firstname as string,",
-						"          jobtitle as string,",
-						"          emailaddress1 as string,",
-						"          modifiedon as timestamp,",
-						"          HashValue as string",
-						"     ),",
-						"     deletable:false,",
-						"     insertable:true,",
-						"     updateable:false,",
-						"     upsertable:false,",
-						"     format: 'table',",
-						"     skipDuplicateMapInputs: true,",
-						"     skipDuplicateMapOutputs: true,",
-						"     errorHandlingOption: 'stopOnFirstError',",
-						"     mapColumn(",
-						"          firstname = CRMSelct@firstname,",
-						"          jobtitle = CRMSelct@jobtitle,",
-						"          emailaddress1 = CRMSelct@emailaddress1,",
-						"          modifiedon = CRMSelct@modifiedon,",
-						"          HashValue = CRMSelct@HashValue",
-						"     )) ~> adress"
-					]
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/src_crm')]",
-				"[concat(variables('factoryId'), '/datasets/LS_Namedeatils')]",
-				"[concat(variables('factoryId'), '/datasets/LS_Adress')]"
-			]
 		}
 	]
 }
