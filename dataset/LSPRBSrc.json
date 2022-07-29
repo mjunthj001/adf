@@ -9,7 +9,7 @@
 		"type": "DynamicsCrmEntity",
 		"schema": [],
 		"typeProperties": {
-			"entityName": "account"
+			"entityName": "contact"
 		}
 	}
 }
