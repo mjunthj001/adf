@@ -10,7 +10,7 @@
 		"schema": [],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "Backup_11"
+			"table": "abc"
 		}
 	}
 }
