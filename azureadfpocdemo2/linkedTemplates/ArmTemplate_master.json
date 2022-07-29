@@ -7,6 +7,18 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "azureadfpocdemo2"
 		},
+		"AZsqlDes_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AZsqlDes'"
+		},
+		"LSPRB_servicePrincipalCredential": {
+			"type": "secureString",
+			"metadata": "Secure string for 'servicePrincipalCredential' of 'LSPRB'"
+		},
+		"LSPRB_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "32fc61d6-3e9c-4f2c-a78b-8a1531bc3198                "
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -33,6 +45,15 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"AZsqlDes_connectionString": {
+						"value": "[parameters('AZsqlDes_connectionString')]"
+					},
+					"LSPRB_servicePrincipalCredential": {
+						"value": "[parameters('LSPRB_servicePrincipalCredential')]"
+					},
+					"LSPRB_properties_typeProperties_servicePrincipalId": {
+						"value": "[parameters('LSPRB_properties_typeProperties_servicePrincipalId')]"
 					}
 				}
 			},
