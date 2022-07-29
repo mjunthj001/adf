@@ -1,0 +1,15 @@
+{
+	"name": "LSPRBSrc",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LSPRB",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DynamicsCrmEntity",
+		"schema": [],
+		"typeProperties": {
+			"entityName": "account"
+		}
+	}
+}
