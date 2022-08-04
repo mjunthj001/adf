@@ -5,11 +5,14 @@
 		"factoryName": {
 			"value": "azureadfpocdemo2"
 		},
-		"AZsqlDes_connectionString": {
-			"value": ""
-		},
 		"LSPRB_servicePrincipalCredential": {
 			"value": ""
+		},
+		"AZsqlDes_properties_typeProperties_connectionString_secretName": {
+			"value": "sqlconnection"
+		},
+		"AzuresqlKeyVault_properties_typeProperties_baseUrl": {
+			"value": "https://ADFKeyVaul.vault.azure.net/"
 		},
 		"LSPRB_properties_typeProperties_servicePrincipalId": {
 			"value": "32fc61d6-3e9c-4f2c-a78b-8a1531bc3198                "

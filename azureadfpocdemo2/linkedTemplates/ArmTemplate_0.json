@@ -7,17 +7,21 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "azureadfpocdemo2"
 		},
-		"AZsqlDes_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AZsqlDes'"
-		},
 		"LSPRB_servicePrincipalCredential": {
 			"type": "secureString",
 			"metadata": "Secure string for 'servicePrincipalCredential' of 'LSPRB'"
 		},
+		"AzuresqlKeyVault_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://ADFKeyVaul.vault.azure.net/"
+		},
 		"LSPRB_properties_typeProperties_servicePrincipalId": {
 			"type": "string",
 			"defaultValue": "32fc61d6-3e9c-4f2c-a78b-8a1531bc3198                "
+		},
+		"AZsqlDes_properties_typeProperties_connectionString_secretName": {
+			"type": "string",
+			"defaultValue": "sqlconnection"
 		}
 	},
 	"variables": {
@@ -129,14 +133,14 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/AZsqlDes')]",
+			"name": "[concat(parameters('factoryName'), '/AzuresqlKeyVault')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"annotations": [],
-				"type": "AzureSqlDatabase",
+				"type": "AzureKeyVault",
 				"typeProperties": {
-					"connectionString": "[parameters('AZsqlDes_connectionString')]"
+					"baseUrl": "[parameters('AzuresqlKeyVault_properties_typeProperties_baseUrl')]"
 				}
 			},
 			"dependsOn": []
@@ -163,25 +167,16 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/AZsql')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
+			"name": "[concat(parameters('factoryName'), '/powerquery1')]",
+			"type": "Microsoft.DataFactory/factories/dataflows",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AZsqlDes",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [],
+				"type": "WranglingDataFlow",
 				"typeProperties": {
-					"schema": "dbo",
-					"table": "AutoContact"
+					"sources": []
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AZsqlDes')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/LSPRBSrc')]",
@@ -201,6 +196,49 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/LSPRB')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AZsqlDes')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"connectionString": {
+						"type": "AzureKeyVaultSecret",
+						"store": {
+							"referenceName": "AzuresqlKeyVault",
+							"type": "LinkedServiceReference"
+						},
+						"secretName": "[parameters('AZsqlDes_properties_typeProperties_connectionString_secretName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzuresqlKeyVault')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AZsql')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AZsqlDes",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "AutoContact"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AZsqlDes')]"
 			]
 		},
 		{
@@ -276,7 +314,7 @@
 						"policy": {
 							"timeout": "7.00:00:00",
 							"retry": 0,
-							"retryIntervalInSeconds": 30,
+							"retryIntervalInSeconds": 60,
 							"secureOutput": false,
 							"secureInput": false
 						},

@@ -7,13 +7,17 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "azureadfpocdemo2"
 		},
-		"AZsqlDes_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'AZsqlDes'"
-		},
 		"LSPRB_servicePrincipalCredential": {
 			"type": "secureString",
 			"metadata": "Secure string for 'servicePrincipalCredential' of 'LSPRB'"
+		},
+		"AZsqlDes_properties_typeProperties_connectionString_secretName": {
+			"type": "string",
+			"defaultValue": "sqlconnection"
+		},
+		"AzuresqlKeyVault_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://ADFKeyVaul.vault.azure.net/"
 		},
 		"LSPRB_properties_typeProperties_servicePrincipalId": {
 			"type": "string",
@@ -46,14 +50,17 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
-					"AZsqlDes_connectionString": {
-						"value": "[parameters('AZsqlDes_connectionString')]"
-					},
 					"LSPRB_servicePrincipalCredential": {
 						"value": "[parameters('LSPRB_servicePrincipalCredential')]"
 					},
+					"AzuresqlKeyVault_properties_typeProperties_baseUrl": {
+						"value": "[parameters('AzuresqlKeyVault_properties_typeProperties_baseUrl')]"
+					},
 					"LSPRB_properties_typeProperties_servicePrincipalId": {
 						"value": "[parameters('LSPRB_properties_typeProperties_servicePrincipalId')]"
+					},
+					"AZsqlDes_properties_typeProperties_connectionString_secretName": {
+						"value": "[parameters('AZsqlDes_properties_typeProperties_connectionString_secretName')]"
 					}
 				}
 			},
