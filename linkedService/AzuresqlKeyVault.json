@@ -1,0 +1,10 @@
+{
+	"name": "AzuresqlKeyVault",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://ADFKeyVaul.vault.azure.net/"
+		}
+	}
+}
