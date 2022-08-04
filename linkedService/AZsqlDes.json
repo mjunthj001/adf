@@ -10,8 +10,7 @@
 					"referenceName": "AzuresqlKeyVault",
 					"type": "LinkedServiceReference"
 				},
-				"secretName": "sqlconnection",
-				"secretVersion": "4e910e5229bc4c128f927fa58dca0162"
+				"secretName": "sqlconnection"
 			}
 		}
 	},
