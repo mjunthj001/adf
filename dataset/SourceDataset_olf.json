@@ -9,7 +9,7 @@
 		"type": "DynamicsEntity",
 		"schema": [],
 		"typeProperties": {
-			"entityName": "account"
+			"entityName": "etl007_column"
 		}
 	}
 }
