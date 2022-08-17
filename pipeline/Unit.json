@@ -1,5 +1,5 @@
 {
-	"name": "ETLrepo",
+	"name": "Unit",
 	"properties": {
 		"activities": [
 			{
@@ -170,7 +170,10 @@
 				"inputs": [
 					{
 						"referenceName": "AZsql",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"TABLE": "D365_County"
+						}
 					}
 				],
 				"outputs": [

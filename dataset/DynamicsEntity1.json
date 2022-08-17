@@ -9,7 +9,7 @@
 		"type": "DynamicsEntity",
 		"schema": [],
 		"typeProperties": {
-			"entityName": "doc_city"
+			"entityName": "doc_facility"
 		}
 	}
 }
