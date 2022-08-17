@@ -1,0 +1,104 @@
+{
+	"name": "src",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "all-units.csv",
+				"container": "unitsrc"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "UN",
+				"type": "String"
+			},
+			{
+				"name": "WG",
+				"type": "String"
+			},
+			{
+				"name": "CLBK",
+				"type": "String"
+			},
+			{
+				"name": "CD",
+				"type": "String"
+			},
+			{
+				"name": "MIN",
+				"type": "String"
+			},
+			{
+				"name": "MAX",
+				"type": "String"
+			},
+			{
+				"name": "RPT-HSG",
+				"type": "String"
+			},
+			{
+				"name": "NAME",
+				"type": "String"
+			},
+			{
+				"name": "CST",
+				"type": "String"
+			},
+			{
+				"name": "SD",
+				"type": "String"
+			},
+			{
+				"name": "S",
+				"type": "String"
+			},
+			{
+				"name": "CAP",
+				"type": "String"
+			},
+			{
+				"name": "BR",
+				"type": "String"
+			},
+			{
+				"name": "CB",
+				"type": "String"
+			},
+			{
+				"name": "IF",
+				"type": "String"
+			},
+			{
+				"name": "EX",
+				"type": "String"
+			},
+			{
+				"name": "WC",
+				"type": "String"
+			},
+			{
+				"name": "CP",
+				"type": "String"
+			},
+			{
+				"name": "SH",
+				"type": "String"
+			},
+			{
+				"name": "OL",
+				"type": "String"
+			}
+		]
+	}
+}

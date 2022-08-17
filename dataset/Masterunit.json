@@ -1,0 +1,104 @@
+{
+	"name": "Masterunit",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "MaterUnit",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "UN",
+				"type": "varchar"
+			},
+			{
+				"name": "WG",
+				"type": "varchar"
+			},
+			{
+				"name": "CLBK",
+				"type": "varchar"
+			},
+			{
+				"name": "CD",
+				"type": "varchar"
+			},
+			{
+				"name": "MIN",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "MAX",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "RPT_HSG",
+				"type": "varchar"
+			},
+			{
+				"name": "NAME",
+				"type": "varchar"
+			},
+			{
+				"name": "CST",
+				"type": "varchar"
+			},
+			{
+				"name": "SD",
+				"type": "varchar"
+			},
+			{
+				"name": "S",
+				"type": "varchar"
+			},
+			{
+				"name": "CAP",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "BR",
+				"type": "varchar"
+			},
+			{
+				"name": "CB",
+				"type": "varchar"
+			},
+			{
+				"name": "I_F",
+				"type": "varchar"
+			},
+			{
+				"name": "EX",
+				"type": "varchar"
+			},
+			{
+				"name": "WC",
+				"type": "varchar"
+			},
+			{
+				"name": "CP",
+				"type": "varchar"
+			},
+			{
+				"name": "CPAP",
+				"type": "varchar"
+			},
+			{
+				"name": "SH",
+				"type": "varchar"
+			},
+			{
+				"name": "OL",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "UnitMaster"
+		}
+	}
+}
