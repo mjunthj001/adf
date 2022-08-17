@@ -3,39 +3,6 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy data1",
-				"type": "Copy",
-				"dependsOn": [
-					{
-						"activity": "Copy data2",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"timeout": "7.00:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"source": {
-						"type": "DynamicsSource",
-						"query": "<fetch version=\"1.0\" output-format=\"xml-platform\" mapping=\"logical\" distinct=\"false\">\r\n  <entity name=\"account\">\r\n    <attribute name=\"name\" />\r\n    <attribute name=\"primarycontactid\" />\r\n    <attribute name=\"telephone1\" />\r\n    <attribute name=\"accountid\" />\r\n    <attribute name=\"yominame\" />\r\n    <attribute name=\"websiteurl\" />\r\n    <attribute name=\"timespentbymeonemailandmeetings\" />\r\n    <attribute name=\"tickersymbol\" />\r\n    <attribute name=\"territorycode\" />\r\n    <attribute name=\"telephone3\" />\r\n    <attribute name=\"stockexchange\" />\r\n    <attribute name=\"statuscode\" />\r\n    <attribute name=\"statecode\" />\r\n    <attribute name=\"slaid\" />\r\n    <attribute name=\"sic\" />\r\n    <attribute name=\"shippingmethodcode\" />\r\n    <attribute name=\"sharesoutstanding\" />\r\n    <attribute name=\"donotsendmm\" />\r\n    <attribute name=\"customertypecode\" />\r\n    <attribute name=\"overriddencreatedon\" />\r\n    <attribute name=\"processid\" />\r\n    <attribute name=\"primarytwitterid\" />\r\n    <attribute name=\"primarysatoriid\" />\r\n    <attribute name=\"preferredsystemuserid\" />\r\n    <attribute name=\"preferredappointmenttimecode\" />\r\n    <attribute name=\"preferredcontactmethodcode\" />\r\n    <attribute name=\"preferredappointmentdaycode\" />\r\n    <attribute name=\"paymenttermscode\" />\r\n    <attribute name=\"parentaccountid\" />\r\n    <attribute name=\"owningbusinessunit\" />\r\n    <attribute name=\"ownershipcode\" />\r\n    <attribute name=\"ownerid\" />\r\n    <attribute name=\"telephone2\" />\r\n    <attribute name=\"onholdtime\" />\r\n    <attribute name=\"numberofemployees\" />\r\n    <attribute name=\"modifiedon\" />\r\n    <attribute name=\"modifiedbyexternalparty\" />\r\n    <attribute name=\"modifiedonbehalfby\" />\r\n    <attribute name=\"modifiedby\" />\r\n    <attribute name=\"marketingonly\" />\r\n    <attribute name=\"marketcap_base\" />\r\n    <attribute name=\"marketcap\" />\r\n    <attribute name=\"lastonholdtime\" />\r\n    <attribute name=\"lastusedincampaign\" />\r\n    <attribute name=\"industrycode\" />\r\n    <attribute name=\"ftpsiteurl\" />\r\n    <attribute name=\"followemail\" />\r\n    <attribute name=\"fax\" />\r\n    <attribute name=\"exchangerate\" />\r\n    <attribute name=\"emailaddress3\" />\r\n    <attribute name=\"emailaddress2\" />\r\n    <attribute name=\"emailaddress1\" />\r\n    <attribute name=\"donotphone\" />\r\n    <attribute name=\"donotpostalmail\" />\r\n    <attribute name=\"donotfax\" />\r\n    <attribute name=\"donotemail\" />\r\n    <attribute name=\"donotbulkpostalmail\" />\r\n    <attribute name=\"donotbulkemail\" />\r\n    <attribute name=\"description\" />\r\n    <attribute name=\"customersizecode\" />\r\n    <attribute name=\"transactioncurrencyid\" />\r\n    <attribute name=\"creditlimit_base\" />\r\n    <attribute name=\"creditlimit\" />\r\n    <attribute name=\"creditonhold\" />\r\n    <attribute name=\"createdon\" />\r\n    <attribute name=\"createdbyexternalparty\" />\r\n    <attribute name=\"createdonbehalfby\" />\r\n    <attribute name=\"createdby\" />\r\n    <attribute name=\"accountclassificationcode\" />\r\n    <attribute name=\"accountcategorycode\" />\r\n    <attribute name=\"businesstypecode\" />\r\n    <attribute name=\"revenue_base\" />\r\n    <attribute name=\"revenue\" />\r\n    <attribute name=\"aging90_base\" />\r\n    <attribute name=\"aging90\" />\r\n    <attribute name=\"aging60_base\" />\r\n    <attribute name=\"aging60\" />\r\n    <attribute name=\"aging30_base\" />\r\n    <attribute name=\"aging30\" />\r\n    <attribute name=\"address1_telephone1\" />\r\n    <attribute name=\"address2_postalcode\" />\r\n    <attribute name=\"address2_utcoffset\" />\r\n    <attribute name=\"address2_upszone\" />\r\n    <attribute name=\"address2_telephone3\" />\r\n    <attribute name=\"address2_telephone2\" />\r\n    <attribute name=\"address2_telephone1\" />\r\n    <attribute name=\"address2_line3\" />\r\n    <attribute name=\"address2_line2\" />\r\n    <attribute name=\"address2_line1\" />\r\n    <attribute name=\"address2_stateorprovince\" />\r\n    <attribute name=\"address2_shippingmethodcode\" />\r\n    <attribute name=\"address2_primarycontactname\" />\r\n    <attribute name=\"address2_postofficebox\" />\r\n    <attribute name=\"address2_name\" />\r\n    <attribute name=\"address2_longitude\" />\r\n    <attribute name=\"address2_latitude\" />\r\n    <attribute name=\"address2_freighttermscode\" />\r\n    <attribute name=\"address2_fax\" />\r\n    <attribute name=\"address2_county\" />\r\n    <attribute name=\"address2_country\" />\r\n    <attribute name=\"address2_city\" />\r\n    <attribute name=\"address2_addresstypecode\" />\r\n    <attribute name=\"address2_composite\" />\r\n    <attribute name=\"address1_postalcode\" />\r\n    <attribute name=\"address1_utcoffset\" />\r\n    <attribute name=\"address1_upszone\" />\r\n    <attribute name=\"address1_telephone3\" />\r\n    <attribute name=\"address1_telephone2\" />\r\n    <attribute name=\"address1_line3\" />\r\n    <attribute name=\"address1_line2\" />\r\n    <attribute name=\"address1_line1\" />\r\n    <attribute name=\"address1_stateorprovince\" />\r\n    <attribute name=\"address1_shippingmethodcode\" />\r\n    <attribute name=\"address1_primarycontactname\" />\r\n    <attribute name=\"address1_postofficebox\" />\r\n    <attribute name=\"address1_name\" />\r\n    <attribute name=\"address1_longitude\" />\r\n    <attribute name=\"address1_latitude\" />\r\n    <attribute name=\"address1_freighttermscode\" />\r\n    <attribute name=\"address1_fax\" />\r\n    <attribute name=\"address1_county\" />\r\n    <attribute name=\"address1_country\" />\r\n    <attribute name=\"address1_city\" />\r\n    <attribute name=\"address1_addresstypecode\" />\r\n    <attribute name=\"address1_composite\" />\r\n    <attribute name=\"accountratingcode\" />\r\n    <attribute name=\"accountnumber\" />\r\n    <attribute name=\"stageid\" />\r\n    <order attribute=\"name\" descending=\"false\" />\r\n  </entity>\r\n</fetch>"
-					},
-					"enableStaging": false
-				},
-				"inputs": [
-					{
-						"referenceName": "SourceDataset_olf",
-						"type": "DatasetReference"
-					}
-				]
-			},
-			{
 				"name": "Copy data2",
 				"type": "Copy",
 				"dependsOn": [],
@@ -102,7 +69,7 @@
 									"physicalType": "varchar"
 								},
 								"sink": {
-									"name": "doc_gender",
+									"name": "doc_facilitygender",
 									"type": "Int32"
 								}
 							},
@@ -130,12 +97,10 @@
 							},
 							{
 								"source": {
-									"name": "County",
-									"type": "String",
-									"physicalType": "varchar"
+									"name": "Guid"
 								},
 								"sink": {
-									"name": "doc_countyid",
+									"name": "doc_facilityid",
 									"type": "Guid"
 								}
 							},
@@ -146,16 +111,26 @@
 									"physicalType": "varchar"
 								},
 								"sink": {
-									"name": "doc_cityid",
+									"name": "doc_cityidname",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "County_Guid"
+								},
+								"sink": {
+									"name": "doc_countyid",
 									"type": "Guid"
 								}
 							},
 							{
 								"source": {
-									"name": "Guid"
+									"name": "City_Guid",
+									"physicalType": "varchar"
 								},
 								"sink": {
-									"name": "doc_facilityid",
+									"name": "doc_cityid",
 									"type": "Guid"
 								}
 							}
