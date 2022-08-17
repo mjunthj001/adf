@@ -1,0 +1,33 @@
+{
+	"name": "Wing",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AZsqlDes",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "guid",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "Unit code",
+				"type": "varchar"
+			},
+			{
+				"name": "Gender",
+				"type": "varchar"
+			},
+			{
+				"name": "WG",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Wings"
+		}
+	}
+}
