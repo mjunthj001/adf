@@ -1,16 +1,15 @@
 {
-	"name": "AZsql",
+	"name": "DynamicsEntity1",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AZsqlDes",
+			"referenceName": "UnitDes",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
-		"type": "AzureSqlTable",
+		"type": "DynamicsEntity",
 		"schema": [],
 		"typeProperties": {
-			"schema": "dbo",
-			"table": "Unit"
+			"entityName": "doc_facility"
 		}
 	}
 }
