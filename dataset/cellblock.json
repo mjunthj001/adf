@@ -1,0 +1,45 @@
+{
+	"name": "cellblock",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "cellblock",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "CellBlock_Guid",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "unit_guid",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "Unit code",
+				"type": "varchar"
+			},
+			{
+				"name": "Gender",
+				"type": "varchar"
+			},
+			{
+				"name": "WG",
+				"type": "varchar"
+			},
+			{
+				"name": "wings_Guid",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "cst",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Cellblock"
+		}
+	}
+}
