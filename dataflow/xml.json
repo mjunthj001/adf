@@ -1,0 +1,24 @@
+{
+	"name": "xml",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "xml",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [],
+			"transformations": [],
+			"scriptLines": [
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     query: '<fetch>\\n  <entity name=\\'etl007_column\\'>\\n    <all-attributes />\\n    <link-entity name=\\'etl007_table\\' to=\\'etl007_tableid\\' from=\\'etl007_tableid\\' alias=\\'a\\' link-type=\\'inner\\'>\\n      <filter>\\n        <condition attribute=\\'etl007_displayname\\' operator=\\'eq\\' value=\\'Facility Unit\\' />\\n      </filter>\\n    </link-entity>\\n  </entity>\\n</fetch>') ~> source1"
+			]
+		}
+	}
+}

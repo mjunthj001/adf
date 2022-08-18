@@ -17,7 +17,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "DynamicsSource",
-						"query": "<fetch>\n  <entity name='etl007_column'>\n    <all-attributes />\n    <link-entity name='etl007_table' to='etl007_tableid' from='etl007_tableid' alias='a' link-type='inner'>\n      <filter>\n        <condition attribute='etl007_displayname' operator='like' value='%ACE Assessment%' />\n      </filter>\n    </link-entity>\n  </entity>\n</fetch>"
+						"query": "<fetch>\n  <entity name='etl007_column'>\n    <all-attributes />\n    <link-entity name='etl007_table' to='etl007_tableid' from='etl007_tableid' alias='a' link-type='inner'>\n      <filter>\n        <condition attribute='etl007_displayname' operator='eq' value='Facility Unit' />\n      </filter>\n    </link-entity>\n  </entity>\n</fetch>"
 					},
 					"sink": {
 						"type": "DynamicsSink",
@@ -409,6 +409,37 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "Data flow1",
+				"type": "ExecuteDataFlow",
+				"dependsOn": [
+					{
+						"activity": "Copy data1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "1.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataflow": {
+						"referenceName": "xml",
+						"type": "DataFlowReference"
+					},
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
+					},
+					"traceLevel": "Fine"
+				}
 			}
 		],
 		"annotations": []

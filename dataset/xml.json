@@ -1,0 +1,15 @@
+{
+	"name": "xml",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Etlrepo",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DynamicsEntity",
+		"schema": [],
+		"typeProperties": {
+			"entityName": "etl007_table"
+		}
+	}
+}
