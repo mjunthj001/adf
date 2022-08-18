@@ -1,0 +1,15 @@
+{
+	"name": "wings",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "wings",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DynamicsEntity",
+		"schema": [],
+		"typeProperties": {
+			"entityName": "doc_facilityunit"
+		}
+	}
+}

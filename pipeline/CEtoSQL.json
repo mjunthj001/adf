@@ -5,51 +5,6 @@
 			{
 				"name": "D365County",
 				"type": "Copy",
-				"dependsOn": [
-					{
-						"activity": "D365City",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"timeout": "7.00:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"source": {
-						"type": "DynamicsSource"
-					},
-					"sink": {
-						"type": "AzureSqlSink",
-						"writeBehavior": "insert",
-						"sqlWriterUseTableLock": false,
-						"tableOption": "autoCreate",
-						"disableMetricsCollection": false
-					},
-					"enableStaging": false
-				},
-				"inputs": [
-					{
-						"referenceName": "DynamicsEntity1",
-						"type": "DatasetReference"
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "AZsql",
-						"type": "DatasetReference"
-					}
-				]
-			},
-			{
-				"name": "D365City",
-				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "7.00:00:00",
@@ -58,7 +13,16 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": [],
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "doc_county"
+					},
+					{
+						"name": "Destination",
+						"value": "dbo.D365_county"
+					}
+				],
 				"typeProperties": {
 					"source": {
 						"type": "DynamicsSource"
@@ -81,7 +45,10 @@
 				"outputs": [
 					{
 						"referenceName": "AZsql",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"TABLE": "D365_city"
+						}
 					}
 				]
 			}

@@ -5,6 +5,12 @@
 			"referenceName": "AZsqlDes",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"TABLE": {
+				"type": "string",
+				"defaultValue": "D365_County"
+			}
+		},
 		"annotations": [],
 		"type": "AzureSqlTable",
 		"schema": [],
