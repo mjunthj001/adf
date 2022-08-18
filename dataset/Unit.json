@@ -1,15 +1,15 @@
 {
-	"name": "DynamicsEntity3",
+	"name": "Unit",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "Etlrepo",
+			"referenceName": "UnitDes",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
 		"type": "DynamicsEntity",
 		"schema": [],
 		"typeProperties": {
-			"entityName": "etl007_table"
+			"entityName": "doc_facility"
 		}
 	}
 }
