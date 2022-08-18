@@ -56,7 +56,10 @@
 				"outputs": [
 					{
 						"referenceName": "AZsql",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"TABLE": "D365_County"
+						}
 					}
 				]
 			},
@@ -91,7 +94,10 @@
 					},
 					"dataset": {
 						"referenceName": "AZsql",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"TABLE": "D365_County"
+						}
 					}
 				}
 			}

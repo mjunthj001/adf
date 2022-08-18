@@ -10,28 +10,14 @@
 						"type": "DatasetReference"
 					},
 					"name": "etlreposrc"
-				},
-				{
-					"dataset": {
-						"referenceName": "Unit",
-						"type": "DatasetReference"
-					},
-					"name": "d365schema"
 				}
 			],
 			"sinks": [],
-			"transformations": [
-				{
-					"name": "union1"
-				}
-			],
+			"transformations": [],
 			"scriptLines": [
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     query: '<fetch>\\n  <entity name=\\'etl007_column\\'>\\n    <attribute name=\\'etl007_displayname\\' />\\n    <link-entity name=\\'etl007_table\\' to=\\'etl007_tableid\\' from=\\'etl007_tableid\\' alias=\\'a\\' link-type=\\'inner\\'>\\n      <filter>\\n        <condition attribute=\\'etl007_displayname\\' operator=\\'eq\\' value=\\'Facility Unit\\' />\\n      </filter>\\n    </link-entity>\\n  </entity>\\n</fetch>') ~> etlreposrc",
-				"source(allowSchemaDrift: true,",
-				"     validateSchema: false) ~> d365schema",
-				"etlreposrc, d365schema union(byName: true)~> union1"
+				"     query: '<fetch>\\n  <entity name=\\'etl007_columnmap\\'>\\n    <attribute name=\\'etl007_name\\' alias=\\'a\\' />\\n    <link-entity name=\\'etl007_column\\' to=\\'etl007_targetcolumnid\\' from=\\'etl007_columnid\\' alias=\\'etl007_column\\' link-type=\\'inner\\'>\\n      <link-entity name=\\'etl007_columnmap\\' to=\\'etl007_columnid\\' from=\\'etl007_sourcecolumnidname\\' alias=\\'src\\' link-type=\\'inner\\'>\\n        <attribute name=\\'etl007_name\\' alias=\\'b\\' />\\n      </link-entity>\\n      <link-entity name=\\'etl007_table\\' to=\\'etl007_tableid\\' from=\\'etl007_tableid\\' alias=\\'etl007_table\\' link-type=\\'inner\\'>\\n        <filter>\\n          <condition attribute=\\'etl007_displayname\\' operator=\\'eq\\' value=\\'Individual\\' />\\n        </filter>\\n      </link-entity>\\n    </link-entity>\\n  </entity>\\n</fetch>') ~> etlreposrc"
 			]
 		}
 	}
