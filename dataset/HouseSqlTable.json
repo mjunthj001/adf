@@ -1,0 +1,93 @@
+{
+	"name": "HouseSqlTable",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "MaterUnit",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "CellBlock_Guid",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "Cst_guid",
+				"type": "varchar"
+			},
+			{
+				"name": "unit_guid",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "Unit code",
+				"type": "varchar"
+			},
+			{
+				"name": "Gender",
+				"type": "varchar"
+			},
+			{
+				"name": "WG",
+				"type": "varchar"
+			},
+			{
+				"name": "wings_Guid",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "CustodyCode",
+				"type": "varchar"
+			},
+			{
+				"name": "City",
+				"type": "varchar"
+			},
+			{
+				"name": "Location Not Available",
+				"type": "varchar"
+			},
+			{
+				"name": "Sheltered Beds",
+				"type": "varchar"
+			},
+			{
+				"name": "CPAP",
+				"type": "varchar"
+			},
+			{
+				"name": "Wheel Chair",
+				"type": "varchar"
+			},
+			{
+				"name": "Exceptions",
+				"type": "varchar"
+			},
+			{
+				"name": "Infirmary",
+				"type": "varchar"
+			},
+			{
+				"name": "Cool Bed",
+				"type": "varchar"
+			},
+			{
+				"name": "Bottom Row",
+				"type": "varchar"
+			},
+			{
+				"name": "Cell Capacity Type",
+				"type": "varchar"
+			},
+			{
+				"name": "Cell Block Type",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "HSG"
+		}
+	}
+}

@@ -1,15 +1,15 @@
 {
-	"name": "UnitDynamics",
+	"name": "HouseDynamicsEntity",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "UnitDes",
+			"referenceName": "HousingDynamics1",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
 		"type": "DynamicsEntity",
 		"schema": [],
 		"typeProperties": {
-			"entityName": "doc_facility"
+			"entityName": "doc_facilitytier"
 		}
 	}
 }

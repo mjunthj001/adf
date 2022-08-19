@@ -1,0 +1,104 @@
+{
+	"name": "HousingAssignments",
+	"properties": {
+		"activities": [
+			{
+				"name": "Housing",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "DynamicsSink",
+						"writeBatchSize": 10,
+						"writeBehavior": "upsert"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "Gender"
+								},
+								"sink": {
+									"name": "doc_gender"
+								}
+							},
+							{
+								"source": {
+									"name": "unit_guid"
+								},
+								"sink": {
+									"name": "doc_facilityid"
+								}
+							},
+							{
+								"source": {
+									"name": "wings_Guid"
+								},
+								"sink": {
+									"name": "doc_unitid"
+								}
+							},
+							{
+								"source": {
+									"name": "Cell Capacity Type"
+								},
+								"sink": {
+									"name": "doc_cellcapacitytype"
+								}
+							},
+							{
+								"source": {
+									"name": "Bottom Row"
+								},
+								"sink": {
+									"name": "doc_bottomrow"
+								}
+							},
+							{
+								"source": {
+									"name": "facilitytierid"
+								},
+								"sink": {
+									"name": "doc_facilitytierid"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "HouseSqlTable",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "HouseDynamicsEntity",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
