@@ -17,7 +17,7 @@
 			"scriptLines": [
 				"source(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     query: '<fetch>\\n  <entity name=\\'etl007_columnmap\\'>\\n    <attribute name=\\'etl007_name\\' alias=\\'a\\' />\\n    <link-entity name=\\'etl007_column\\' to=\\'etl007_targetcolumnid\\' from=\\'etl007_columnid\\' alias=\\'etl007_column\\' link-type=\\'inner\\'>\\n      <link-entity name=\\'etl007_columnmap\\' to=\\'etl007_columnid\\' from=\\'etl007_sourcecolumnidname\\' alias=\\'src\\' link-type=\\'inner\\'>\\n        <attribute name=\\'etl007_name\\' alias=\\'b\\' />\\n      </link-entity>\\n      <link-entity name=\\'etl007_table\\' to=\\'etl007_tableid\\' from=\\'etl007_tableid\\' alias=\\'etl007_table\\' link-type=\\'inner\\'>\\n        <filter>\\n          <condition attribute=\\'etl007_displayname\\' operator=\\'eq\\' value=\\'Individual\\' />\\n        </filter>\\n      </link-entity>\\n    </link-entity>\\n  </entity>\\n</fetch>') ~> etlreposrc"
+				"     query: '<fetch>\\n  <entity name=\\'etl007_columnmap\\'>\\n    <attribute name=\\'etl007_sourcecolumnidname\\' />\\n    <attribute name=\\'etl007_targetcolumnidname\\' />\\n    <link-entity name=\\'etl007_column\\' to=\\'etl007_sourcecolumnid\\' from=\\'etl007_columnid\\' alias=\\'etl007_column\\' link-type=\\'inner\\' />\\n  </entity>\\n</fetch>') ~> etlreposrc"
 			]
 		}
 	}
