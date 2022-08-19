@@ -1,5 +1,5 @@
 {
-	"name": "DynamicsEntity1",
+	"name": "UnitDynamics",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "UnitDes",

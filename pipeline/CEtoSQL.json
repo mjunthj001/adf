@@ -38,7 +38,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DynamicsEntity1",
+						"referenceName": "UnitDynamics",
 						"type": "DatasetReference"
 					}
 				],
