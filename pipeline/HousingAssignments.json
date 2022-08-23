@@ -31,50 +31,210 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "Gender"
+									"name": "doc_bottomrow",
+									"type": "String",
+									"physicalType": "varchar"
 								},
 								"sink": {
-									"name": "doc_gender"
+									"name": "doc_bottomrow",
+									"type": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "unit_guid"
+									"name": "doc_cellblocktype",
+									"type": "String",
+									"physicalType": "varchar"
 								},
 								"sink": {
-									"name": "doc_facilityid"
+									"name": "doc_cellblocktype",
+									"type": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "wings_Guid"
+									"name": "doc_cellcapacitytype",
+									"type": "String",
+									"physicalType": "varchar"
 								},
 								"sink": {
-									"name": "doc_unitid"
+									"name": "doc_cellcapacitytype",
+									"type": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "Cell Capacity Type"
+									"name": "doc_city",
+									"type": "Guid",
+									"physicalType": "uniqueidentifier"
 								},
 								"sink": {
-									"name": "doc_cellcapacitytype"
+									"name": "doc_city",
+									"type": "Guid"
 								}
 							},
 							{
 								"source": {
-									"name": "Bottom Row"
+									"name": "doc_code",
+									"type": "String",
+									"physicalType": "varchar"
 								},
 								"sink": {
-									"name": "doc_bottomrow"
+									"name": "doc_code",
+									"type": "String"
 								}
 							},
 							{
 								"source": {
-									"name": "facilitytierid"
+									"name": "doc_coolbed",
+									"type": "String",
+									"physicalType": "varchar"
 								},
 								"sink": {
-									"name": "doc_facilitytierid"
+									"name": "doc_coolbed",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "doc_cpap",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "doc_cpap",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Custody_Guid",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "doc_custodycodeid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "doc_exceptions",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "doc_exceptions",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "CellBlock_Guid",
+									"type": "Guid",
+									"physicalType": "uniqueidentifier"
+								},
+								"sink": {
+									"name": "doc_facilitycellhouseid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "unit_guid",
+									"type": "Guid",
+									"physicalType": "uniqueidentifier"
+								},
+								"sink": {
+									"name": "doc_facilityid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "doc_gender",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "doc_gender",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "doc_infirmary",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "doc_infirmary",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "doc_locationnotavailable",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "doc_locationnotavailable",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "doc_shelteredbeds",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "doc_shelteredbeds",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "doc_tier",
+									"physicalType": "uniqueidentifier"
+								},
+								"sink": {
+									"name": "doc_tier",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "wings_Guid",
+									"type": "Guid",
+									"physicalType": "uniqueidentifier"
+								},
+								"sink": {
+									"name": "doc_unitid",
+									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "doc_wheelchair",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "doc_wheelchair",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "hsg_Guid",
+									"type": "Guid",
+									"physicalType": "uniqueidentifier"
+								},
+								"sink": {
+									"name": "doc_facilitytierid",
+									"type": "Guid"
 								}
 							}
 						],

@@ -56,7 +56,7 @@
 							},
 							{
 								"source": {
-									"name": "facilityunitId"
+									"name": "Wings_Guid"
 								},
 								"sink": {
 									"name": "doc_facilityunitid"

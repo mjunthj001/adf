@@ -69,8 +69,7 @@
 									"physicalType": "varchar"
 								},
 								"sink": {
-									"name": "doc_gender",
-									"type": "Int32"
+									"name": "doc_facilitygender"
 								}
 							},
 							{
