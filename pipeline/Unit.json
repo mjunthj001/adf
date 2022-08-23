@@ -102,8 +102,7 @@
 									"physicalType": "varchar"
 								},
 								"sink": {
-									"name": "doc_countyid",
-									"type": "Guid"
+									"name": "doc_countyid"
 								}
 							},
 							{
@@ -122,8 +121,7 @@
 									"name": "Guid"
 								},
 								"sink": {
-									"name": "doc_facilityid",
-									"type": "Guid"
+									"name": "doc_facilityid"
 								}
 							}
 						],
