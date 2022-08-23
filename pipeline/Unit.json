@@ -119,7 +119,7 @@
 							},
 							{
 								"source": {
-									"name": "UnitGuid"
+									"name": "Guid"
 								},
 								"sink": {
 									"name": "doc_facilityid",
