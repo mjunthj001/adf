@@ -91,7 +91,10 @@
 					},
 					"dataset": {
 						"referenceName": "unitsql",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"CountyTABLE": "account"
+						}
 					}
 				}
 			}
