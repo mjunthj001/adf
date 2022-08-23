@@ -44,7 +44,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "AZsql",
+						"referenceName": "unitsql",
 						"type": "DatasetReference",
 						"parameters": {
 							"CountyTABLE": "D365_city"

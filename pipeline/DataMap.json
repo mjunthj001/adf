@@ -55,7 +55,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "AZsql",
+						"referenceName": "unitsql",
 						"type": "DatasetReference"
 					}
 				]
@@ -90,7 +90,7 @@
 						"partitionOption": "None"
 					},
 					"dataset": {
-						"referenceName": "AZsql",
+						"referenceName": "unitsql",
 						"type": "DatasetReference"
 					}
 				}

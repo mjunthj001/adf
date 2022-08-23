@@ -97,8 +97,7 @@
 							},
 							{
 								"source": {
-									"name": "County",
-									"type": "String",
+									"name": "County_Guid",
 									"physicalType": "varchar"
 								},
 								"sink": {
@@ -107,8 +106,7 @@
 							},
 							{
 								"source": {
-									"name": "City",
-									"type": "String",
+									"name": "City_Guid",
 									"physicalType": "varchar"
 								},
 								"sink": {
@@ -134,7 +132,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "AZsql",
+						"referenceName": "unitsql",
 						"type": "DatasetReference",
 						"parameters": {
 							"CountyTABLE": "unit"

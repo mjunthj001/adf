@@ -1,5 +1,5 @@
 {
-	"name": "AZsql",
+	"name": "unitsql",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "UnitSQl",
