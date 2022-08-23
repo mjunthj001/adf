@@ -1,0 +1,15 @@
+{
+	"name": "county",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "city",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DynamicsCrmEntity",
+		"schema": [],
+		"typeProperties": {
+			"entityName": "doc_county"
+		}
+	}
+}

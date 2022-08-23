@@ -2,13 +2,12 @@
 	"name": "AZsql",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AZsqlDes",
+			"referenceName": "UnitSQl",
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"TABLE": {
-				"type": "string",
-				"defaultValue": "D365_County"
+			"CountyTABLE": {
+				"type": "string"
 			}
 		},
 		"annotations": [],

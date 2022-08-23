@@ -118,7 +118,7 @@
 							},
 							{
 								"source": {
-									"name": "Guid"
+									"name": "UnitGuid"
 								},
 								"sink": {
 									"name": "doc_facilityid"
@@ -137,7 +137,7 @@
 						"referenceName": "AZsql",
 						"type": "DatasetReference",
 						"parameters": {
-							"TABLE": "unit"
+							"CountyTABLE": "unit"
 						}
 					}
 				],
