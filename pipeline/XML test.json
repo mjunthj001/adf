@@ -17,7 +17,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "DynamicsSource",
-						"query": "<fetch>\n  <entity name='etl007_columnmap'>\n    <all-attributes />\n    <link-entity name='etl007_column' to='etl007_sourcecolumnid' from='etl007_columnid' alias='etl007_column' link-type='inner'>\n      <all-attributes />\n    </link-entity>\n  </entity>\n</fetch>"
+						"query": "<fetch>\n  <entity name=\"etl007_columnmap\">\n    <link-entity name=\"etl007_column\" from=\"etl007_columnid\" to=\"etl007_sourcecolumnid\" link-type=\"inner\">\n      <attribute name=\"etl007_name\" alias=\"Source\" />\n    </link-entity>\n    <link-entity name=\"etl007_column\" from=\"etl007_columnid\" to=\"etl007_targetcolumnid\" link-type=\"inner\">\n      <attribute name=\"etl007_name\" alias=\"target\" />\n    </link-entity>\n  </entity>\n</fetch>"
 					},
 					"sink": {
 						"type": "AzureSqlSink",
