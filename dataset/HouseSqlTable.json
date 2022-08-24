@@ -2,7 +2,7 @@
 	"name": "HouseSqlTable",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "MaterUnit",
+			"referenceName": "HousingAss",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
