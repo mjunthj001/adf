@@ -1,0 +1,12 @@
+{
+	"name": "DynamicsCrmEntity1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "city",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DynamicsCrmEntity",
+		"schema": []
+	}
+}

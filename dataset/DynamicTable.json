@@ -1,15 +1,16 @@
 {
-	"name": "HouseDynamicsEntity",
+	"name": "DynamicTable",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "HousingDynamics1",
+			"referenceName": "Dynamic",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
-		"type": "DynamicsEntity",
+		"type": "AzureSqlTable",
 		"schema": [],
 		"typeProperties": {
-			"entityName": "stringmap"
+			"schema": "dbo",
+			"table": "StringMap"
 		}
 	}
 }

@@ -1,12 +1,12 @@
 {
-	"name": "HouseDynamicsEntity",
+	"name": "dynamicmapping",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "HousingDynamics1",
+			"referenceName": "DyMapping",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
-		"type": "DynamicsEntity",
+		"type": "DynamicsCrmEntity",
 		"schema": [],
 		"typeProperties": {
 			"entityName": "stringmap"

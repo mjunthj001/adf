@@ -69,8 +69,7 @@
 									"physicalType": "uniqueidentifier"
 								},
 								"sink": {
-									"name": "doc_city",
-									"type": "Guid"
+									"name": "doc_city"
 								}
 							},
 							{
