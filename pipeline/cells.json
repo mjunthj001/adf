@@ -201,7 +201,7 @@
 									"physicalType": "uniqueidentifier"
 								},
 								"sink": {
-									"name": "doc_cellhouse",
+									"name": "doc_facilitycellsid",
 									"type": "Guid"
 								}
 							}
