@@ -98,7 +98,7 @@
 		],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "UnitMaster"
+			"table": "newtable"
 		}
 	}
 }

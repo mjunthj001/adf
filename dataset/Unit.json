@@ -1,0 +1,15 @@
+{
+	"name": "Unit",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "UnitDes",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DynamicsEntity",
+		"schema": [],
+		"typeProperties": {
+			"entityName": "doc_facility"
+		}
+	}
+}

@@ -1,0 +1,24 @@
+{
+	"name": "xml",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "xml",
+						"type": "DatasetReference"
+					},
+					"name": "etlreposrc"
+				}
+			],
+			"sinks": [],
+			"transformations": [],
+			"scriptLines": [
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     query: '<fetch>\\n  <entity name=\\'etl007_columnmap\\'>\\n    <attribute name=\\'etl007_sourcecolumnidname\\' />\\n    <attribute name=\\'etl007_targetcolumnidname\\' />\\n    <link-entity name=\\'etl007_column\\' to=\\'etl007_sourcecolumnid\\' from=\\'etl007_columnid\\' alias=\\'etl007_column\\' link-type=\\'inner\\' />\\n  </entity>\\n</fetch>') ~> etlreposrc"
+			]
+		}
+	}
+}

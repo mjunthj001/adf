@@ -55,8 +55,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "unitsql",
-						"type": "DatasetReference"
+
 					}
 				]
 			},
@@ -90,10 +89,7 @@
 						"partitionOption": "None"
 					},
 					"dataset": {
-						"referenceName": "unitsql",
-						"type": "DatasetReference",
-						"parameters": {
-							"CountyTABLE": "account"
+
 						}
 					}
 				}
