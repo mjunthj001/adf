@@ -1,0 +1,46 @@
+{
+	"name": "bedSql",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Bedsql",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "doc_facilitybedid",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "doc_roomid",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "doc_tierid",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "doc_unitid",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "doc_facilityid",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "doc_cellhouseid",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "doc_bedtype",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "beds"
+		}
+	}
+}

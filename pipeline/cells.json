@@ -1,13 +1,13 @@
 {
-	"name": "HousingAssignments",
+	"name": "cells",
 	"properties": {
 		"activities": [
 			{
-				"name": "Housing",
+				"name": "cells",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
-					"timeout": "7.00:00:00",
+					"timeout": "0.12:00:00",
 					"retry": 0,
 					"retryIntervalInSeconds": 30,
 					"secureOutput": false,
@@ -21,7 +21,7 @@
 						"partitionOption": "None"
 					},
 					"sink": {
-						"type": "DynamicsSink",
+						"type": "DynamicsCrmSink",
 						"writeBatchSize": 10,
 						"writeBehavior": "upsert"
 					},
@@ -42,17 +42,6 @@
 							},
 							{
 								"source": {
-									"name": "doc_cellblocktype",
-									"type": "Int32",
-									"physicalType": "int"
-								},
-								"sink": {
-									"name": "doc_cellblocktype",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
 									"name": "doc_cellcapacitytype",
 									"type": "Int32",
 									"physicalType": "int"
@@ -64,13 +53,24 @@
 							},
 							{
 								"source": {
-									"name": "doc_city",
+									"name": "doc_cellhouse",
 									"type": "Guid",
 									"physicalType": "uniqueidentifier"
 								},
 								"sink": {
-									"name": "doc_city",
+									"name": "doc_cellhouse",
 									"type": "Guid"
+								}
+							},
+							{
+								"source": {
+									"name": "doc_cellnumber",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "doc_cellnumber",
+									"type": "String"
 								}
 							},
 							{
@@ -86,7 +86,7 @@
 							},
 							{
 								"source": {
-									"name": "doc_coolbedtype",
+									"name": "doc_coolbed",
 									"type": "Int32",
 									"physicalType": "int"
 								},
@@ -108,17 +108,6 @@
 							},
 							{
 								"source": {
-									"name": "Custody_Guid",
-									"type": "String",
-									"physicalType": "varchar"
-								},
-								"sink": {
-									"name": "doc_custodycodeid",
-									"type": "Guid"
-								}
-							},
-							{
-								"source": {
 									"name": "doc_exceptions",
 									"type": "Int32",
 									"physicalType": "int"
@@ -130,62 +119,7 @@
 							},
 							{
 								"source": {
-									"name": "doc_gender",
-									"type": "String",
-									"physicalType": "varchar"
-								},
-								"sink": {
-									"name": "doc_gender",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "doc_infirmary",
-									"type": "Int32",
-									"physicalType": "int"
-								},
-								"sink": {
-									"name": "doc_infirmary",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "doc_locationnotavailable",
-									"type": "Int32",
-									"physicalType": "int"
-								},
-								"sink": {
-									"name": "doc_locationnotavailable",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "doc_shelteredbeds",
-									"type": "Int32",
-									"physicalType": "int"
-								},
-								"sink": {
-									"name": "doc_shelteredbeds",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "doc_wheelchair",
-									"type": "Int32",
-									"physicalType": "int"
-								},
-								"sink": {
-									"name": "doc_wheelchair",
-									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "unit_guid",
+									"name": "doc_facilityid",
 									"type": "Guid",
 									"physicalType": "uniqueidentifier"
 								},
@@ -196,7 +130,51 @@
 							},
 							{
 								"source": {
-									"name": "wings_Guid",
+									"name": "doc_infirmary",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "doc_infirmary",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "doc_isvirtualhouse",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "doc_isvirtualhouse",
+									"type": "Boolean"
+								}
+							},
+							{
+								"source": {
+									"name": "doc_locationnotavailable",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "doc_locationnotavailable",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "doc_shelteredbeds",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "doc_shelteredbeds",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "doc_unitid",
 									"type": "Guid",
 									"physicalType": "uniqueidentifier"
 								},
@@ -207,23 +185,23 @@
 							},
 							{
 								"source": {
-									"name": "CellBlock_Guid",
-									"type": "Guid",
-									"physicalType": "uniqueidentifier"
+									"name": "doc_wheelchair",
+									"type": "Int32",
+									"physicalType": "int"
 								},
 								"sink": {
-									"name": "doc_facilitycellhouseid",
-									"type": "Guid"
+									"name": "doc_wheelchair",
+									"type": "Int32"
 								}
 							},
 							{
 								"source": {
-									"name": "hsg_Guid",
+									"name": "Cell_Guid",
 									"type": "Guid",
 									"physicalType": "uniqueidentifier"
 								},
 								"sink": {
-									"name": "doc_facilitytierid",
+									"name": "doc_facilitycellsid",
 									"type": "Guid"
 								}
 							}
@@ -237,13 +215,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "HouseSqlTable",
+						"referenceName": "cellssql",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "HouseDynamicsEntity",
+						"referenceName": "cells",
 						"type": "DatasetReference"
 					}
 				]

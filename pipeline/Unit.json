@@ -69,8 +69,7 @@
 									"physicalType": "varchar"
 								},
 								"sink": {
-									"name": "doc_gender",
-									"type": "Int32"
+									"name": "doc_facilitygender"
 								}
 							},
 							{
@@ -97,19 +96,16 @@
 							},
 							{
 								"source": {
-									"name": "County",
-									"type": "String",
+									"name": "County_Guid",
 									"physicalType": "varchar"
 								},
 								"sink": {
-									"name": "doc_countyid",
-									"type": "Guid"
+									"name": "doc_countyid"
 								}
 							},
 							{
 								"source": {
-									"name": "City",
-									"type": "String",
+									"name": "City_Guid",
 									"physicalType": "varchar"
 								},
 								"sink": {
@@ -119,11 +115,10 @@
 							},
 							{
 								"source": {
-									"name": "Guid"
+									"name": "UnitGuid"
 								},
 								"sink": {
-									"name": "doc_facilityid",
-									"type": "Guid"
+									"name": "doc_facilityid"
 								}
 							}
 						],
@@ -136,10 +131,10 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "AZsql",
+						"referenceName": "unitsql",
 						"type": "DatasetReference",
 						"parameters": {
-							"TABLE": "unit"
+							"CountyTABLE": "unit"
 						}
 					}
 				],

@@ -1,9 +1,9 @@
 {
-	"name": "CEtoSQL",
+	"name": "City",
 	"properties": {
 		"activities": [
 			{
-				"name": "D365County",
+				"name": "city",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -13,32 +13,23 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": [
-					{
-						"name": "Source",
-						"value": "doc_county"
-					},
-					{
-						"name": "Destination",
-						"value": "dbo.D365_county"
-					}
-				],
+				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "DynamicsSource"
+						"type": "DynamicsCrmSource"
 					},
 					"sink": {
 						"type": "AzureSqlSink",
+						"preCopyScript": "Truncate table D365_City;\n",
 						"writeBehavior": "insert",
 						"sqlWriterUseTableLock": false,
-						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
 					"enableStaging": false
 				},
 				"inputs": [
 					{
-						"referenceName": "UnitDynamics",
+						"referenceName": "City",
 						"type": "DatasetReference"
 					}
 				],
@@ -47,7 +38,7 @@
 						"referenceName": "unitsql",
 						"type": "DatasetReference",
 						"parameters": {
-							"CountyTABLE": "D365_city"
+							"CountyTABLE": "D365_City"
 						}
 					}
 				]

@@ -1,0 +1,15 @@
+{
+	"name": "cells",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "cells",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DynamicsCrmEntity",
+		"schema": [],
+		"typeProperties": {
+			"entityName": "doc_facilitycells"
+		}
+	}
+}

@@ -1,0 +1,15 @@
+{
+	"name": "bedcrm",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "bedcrm",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DynamicsCrmEntity",
+		"schema": [],
+		"typeProperties": {
+			"entityName": "doc_facilitybed"
+		}
+	}
+}

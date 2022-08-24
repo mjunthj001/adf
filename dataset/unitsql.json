@@ -1,0 +1,21 @@
+{
+	"name": "unitsql",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "UnitSQl",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"CountyTABLE": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Unit"
+		}
+	}
+}

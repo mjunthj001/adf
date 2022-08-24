@@ -1,0 +1,96 @@
+{
+	"name": "cellssql",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "cellsql",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Cell_Guid",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "doc_facilityid",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "doc_unitid",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "doc_cellhouse",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "doc_tierid",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "doc_isvirtualhouse",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "doc_cellnumber",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "doc_code",
+				"type": "varchar"
+			},
+			{
+				"name": "doc_cellcapacitytype",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "doc_bottomrow",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "doc_coolbed",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "doc_infirmary",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "doc_exceptions",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "doc_wheelchair",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "doc_cpap",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "doc_shelteredbeds",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "doc_locationnotavailable",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "cells"
+		}
+	}
+}

@@ -55,11 +55,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "AZsql",
-						"type": "DatasetReference",
-						"parameters": {
-							"TABLE": "D365_County"
-						}
+
 					}
 				]
 			},
@@ -93,10 +89,7 @@
 						"partitionOption": "None"
 					},
 					"dataset": {
-						"referenceName": "AZsql",
-						"type": "DatasetReference",
-						"parameters": {
-							"TABLE": "D365_County"
+
 						}
 					}
 				}

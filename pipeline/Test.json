@@ -1,31 +1,22 @@
 {
-	"name": "CEtoSQL",
+	"name": "Test",
 	"properties": {
 		"activities": [
 			{
-				"name": "D365County",
+				"name": "Copy data1",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
-					"timeout": "7.00:00:00",
+					"timeout": "0.12:00:00",
 					"retry": 0,
 					"retryIntervalInSeconds": 30,
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": [
-					{
-						"name": "Source",
-						"value": "doc_county"
-					},
-					{
-						"name": "Destination",
-						"value": "dbo.D365_county"
-					}
-				],
+				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "DynamicsSource"
+						"type": "DynamicsCrmSource"
 					},
 					"sink": {
 						"type": "AzureSqlSink",
@@ -38,17 +29,14 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "UnitDynamics",
+						"referenceName": "dynamicmapping",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "unitsql",
-						"type": "DatasetReference",
-						"parameters": {
-							"CountyTABLE": "D365_city"
-						}
+						"referenceName": "DynamicTable",
+						"type": "DatasetReference"
 					}
 				]
 			}

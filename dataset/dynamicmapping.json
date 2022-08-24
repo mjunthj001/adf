@@ -1,0 +1,15 @@
+{
+	"name": "dynamicmapping",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DyMapping",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DynamicsCrmEntity",
+		"schema": [],
+		"typeProperties": {
+			"entityName": "stringmap"
+		}
+	}
+}

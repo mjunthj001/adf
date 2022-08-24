@@ -2,7 +2,7 @@
 	"name": "HouseSqlTable",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "MaterUnit",
+			"referenceName": "HousingAss",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
@@ -87,7 +87,7 @@
 		],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "HSG"
+			"table": "HousingAssignments"
 		}
 	}
 }
