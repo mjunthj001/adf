@@ -1,6 +1,7 @@
 {
 	"name": "xml",
 	"properties": {
+		"annotations": [],
 		"type": "MappingDataFlow",
 		"typeProperties": {
 			"sources": [

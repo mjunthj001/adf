@@ -2,7 +2,7 @@
 	"name": "DynamicTable",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "Dynamic",
+			"referenceName": "AZsqlDes",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
@@ -10,7 +10,7 @@
 		"schema": [],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "StringMap"
+			"table": "contact"
 		}
 	}
 }
