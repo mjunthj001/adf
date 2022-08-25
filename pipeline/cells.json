@@ -64,28 +64,6 @@
 							},
 							{
 								"source": {
-									"name": "doc_cellnumber",
-									"type": "Int32",
-									"physicalType": "int"
-								},
-								"sink": {
-									"name": "doc_cellnumber",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
-									"name": "doc_code",
-									"type": "String",
-									"physicalType": "varchar"
-								},
-								"sink": {
-									"name": "doc_code",
-									"type": "String"
-								}
-							},
-							{
-								"source": {
 									"name": "doc_coolbed",
 									"type": "Int32",
 									"physicalType": "int"
@@ -137,17 +115,6 @@
 								"sink": {
 									"name": "doc_infirmary",
 									"type": "Int32"
-								}
-							},
-							{
-								"source": {
-									"name": "doc_isvirtualhouse",
-									"type": "Int32",
-									"physicalType": "int"
-								},
-								"sink": {
-									"name": "doc_isvirtualhouse",
-									"type": "Boolean"
 								}
 							},
 							{
