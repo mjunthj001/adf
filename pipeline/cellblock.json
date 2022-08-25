@@ -71,7 +71,7 @@
 							},
 							{
 								"source": {
-									"name": "doc_custodycodeid"
+									"name": "Cst_guid"
 								},
 								"sink": {
 									"name": "doc_custodycodeid"
