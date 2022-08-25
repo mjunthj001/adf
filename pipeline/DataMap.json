@@ -52,11 +52,6 @@
 						"referenceName": "LSPRBSrc",
 						"type": "DatasetReference"
 					}
-				],
-				"outputs": [
-					{
-
-					}
 				]
 			},
 			{
@@ -87,14 +82,12 @@
 						},
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
-					},
-					"dataset": {
-
-						}
 					}
 				}
 			}
 		],
-		"annotations": []
-	}
+		"annotations": [],
+		"lastPublishTime": "2022-08-04T11:31:53Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
 }
