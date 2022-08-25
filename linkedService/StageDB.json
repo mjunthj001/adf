@@ -1,0 +1,17 @@
+{
+	"name": "StageDB",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"parameters": {
+			"DBPassword": {
+				"type": "String",
+				"defaultValue": "Password@1234"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=azuresqlserver123456.database.windows.net;Initial Catalog=D365Demo;User ID=Admintest1;Password=@{linkedService().DBPassword}"
+		}
+	}
+}

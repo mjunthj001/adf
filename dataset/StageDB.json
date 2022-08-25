@@ -1,0 +1,19 @@
+{
+	"name": "StageDB",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "StageDB",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"DBPassword": "Password@1234"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "lkp_doc_custodycode"
+		}
+	}
+}

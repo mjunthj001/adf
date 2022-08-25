@@ -99,6 +99,11 @@
 				]
 			}
 		],
+		"variables": {
+			"TableName": {
+				"type": "String"
+			}
+		},
 		"annotations": []
 	}
 }
