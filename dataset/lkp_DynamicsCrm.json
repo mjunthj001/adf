@@ -1,0 +1,15 @@
+{
+	"name": "lkp_DynamicsCrm",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "CitsConfig",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DynamicsCrmEntity",
+		"schema": [],
+		"typeProperties": {
+			"entityName": "doc_custodycode"
+		}
+	}
+}

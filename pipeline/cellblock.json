@@ -71,7 +71,7 @@
 							},
 							{
 								"source": {
-									"name": "Cst_guid"
+									"name": "doc_custodycodeid"
 								},
 								"sink": {
 									"name": "doc_custodycodeid"
@@ -99,6 +99,11 @@
 				]
 			}
 		],
+		"variables": {
+			"TableName": {
+				"type": "String"
+			}
+		},
 		"annotations": []
 	}
 }
