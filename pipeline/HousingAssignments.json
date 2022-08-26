@@ -226,6 +226,14 @@
 									"name": "doc_facilitytierid",
 									"type": "Guid"
 								}
+							},
+							{
+								"source": {
+									"name": "doc_tier"
+								},
+								"sink": {
+									"name": "doc_tier"
+								}
 							}
 						],
 						"typeConversion": true,
