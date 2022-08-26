@@ -171,6 +171,14 @@
 									"name": "doc_facilitycellsid",
 									"type": "Guid"
 								}
+							},
+							{
+								"source": {
+									"name": "doc_tierid"
+								},
+								"sink": {
+									"name": "doc_tierid"
+								}
 							}
 						],
 						"typeConversion": true,
